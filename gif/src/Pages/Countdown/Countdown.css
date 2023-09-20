@@ -1,0 +1,35 @@
+.gmlogo2 {
+  width: 40%;
+  margin: -9px;
+}
+
+.heart2 {
+  display: block;
+  position: absolute;
+  width: 90%;
+  bottom: 0px;
+  margin-left: 8%;
+}
+
+.smile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.nkh2 {
+  display: block;
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
+  margin-left: 37%;
+  margin-bottom: 22%;
+}
+.count {
+  display: block;
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
+  margin-left: 33%;
+  margin-bottom: 33%;
+}

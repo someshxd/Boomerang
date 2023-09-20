@@ -1,0 +1,20 @@
+.camera {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+.frame {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: -9px;
+}
+.gmlogo {
+  position: absolute;
+  top: 0;
+}
+.bigg {
+  position: absolute;
+  top: 300px;
+  left: 20%;
+}
