@@ -4,28 +4,25 @@ import give from "../../assets/give.png";
 import heart from "../../assets/heart.png";
 import nkh from "../../assets/nkh.png";
 import smileto from "../../assets/smileto.png";
-import "./Front.css";
-import scanqr from "../../assets/scanqr.jpg";
+import "./Front.css"; // Import the CSS file
 
 export default function Front() {
   return (
-    <div>
-      <div className="app">
-        <div className="gmlogo">
-          <img src={gmlogo} />
-        </div>
-        <div className="give">
-          <img src={give} />
-        </div>
-        <div className="heart">
-          <img src={heart} />
-        </div>
-        <div className="nkh">
-          <img src={nkh} />
-        </div>
-        <div className="smileto">
-          <img src={smileto} />
-        </div>
+    <div className="app">
+      <div className="gmlogo">
+        <img src={gmlogo} alt="GM Logo" />
+      </div>
+      <div className="give">
+        <img src={give} alt="Give" />
+      </div>
+      <div className="heart">
+        <img src={heart} alt="Heart" />
+      </div>
+      <div className="nkh">
+        <img src={nkh} alt="NKH" />
+      </div>
+      <div className="smileto">
+        <img src={smileto} alt="Smile To" />
       </div>
     </div>
   );

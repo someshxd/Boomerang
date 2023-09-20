@@ -1,12 +1,11 @@
-.gmlogo2 {
+.gmlogo {
   width: 40%;
   margin: -9px;
 }
 
-.heart2 {
+.heart {
   display: block;
   position: absolute;
-  width: 90%;
   bottom: 0px;
   margin-left: 8%;
 }
@@ -15,12 +14,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 400px;
 }
-.nkh2 {
+.nkh {
   display: block;
   position: absolute;
-  width: 90%;
+
   bottom: 10px;
   margin-left: 37%;
   margin-bottom: 22%;
@@ -28,7 +27,6 @@
 .count {
   display: block;
   position: absolute;
-  width: 90%;
   bottom: 10px;
   margin-left: 33%;
   margin-bottom: 33%;

@@ -7,10 +7,10 @@ import Qrscan from "./Pages/Qrscan/Qrscan";
 export default function App() {
   return (
     <div className="app">
-      {/* <Front /> */}
-      <Countdown />
-      {/* <Camera />
-      <Qrscan /> */}
+      {/* <Front />
+      <Countdown /> */}
+      {/* <Camera /> */}
+      <Qrscan />
     </div>
   );
 }

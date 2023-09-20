@@ -28,16 +28,16 @@ export default function Countdown() {
   return (
     <div>
       <div className="app">
-        <div className="gmlogo2">
+        <div className="gmlogo">
           <img src={gmlogo} />
         </div>
         <div className="smile">
           <img src={smile} />
         </div>
-        <div className="heart2">
+        <div className="heart">
           <img src={heart} />
         </div>
-        <div className="nkh2">
+        <div className="nkh">
           <img src={nkh} />
         </div>
         <div className="count">
