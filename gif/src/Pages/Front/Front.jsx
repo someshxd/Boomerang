@@ -6,23 +6,26 @@ import nkh from "../../assets/nkh.png";
 import smileto from "../../assets/smileto.png";
 import "./Front.css"; // Import the CSS file
 
-export default function Front() {
+export default function Front({ setShowCountdown }) {
+  const showCount = () => {
+    setShowCountdown(true);
+  };
   return (
     <div className="app">
       <div className="gmlogo">
-        <img src={gmlogo} alt="GM Logo" />
+        <img src={gmlogo} />
       </div>
       <div className="give">
-        <img src={give} alt="Give" />
+        <img src={give} />
       </div>
       <div className="heart">
-        <img src={heart} alt="Heart" />
+        <img src={heart} onClick={showCount} />
       </div>
       <div className="nkh">
-        <img src={nkh} alt="NKH" />
+        <img src={nkh} />
       </div>
       <div className="smileto">
-        <img src={smileto} alt="Smile To" />
+        <img src={smileto} />
       </div>
     </div>
   );

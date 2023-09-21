@@ -8,18 +8,28 @@ import two from "../../assets/2.png";
 import three from "../../assets/3.png";
 import "./Countdown.css";
 
-export default function Countdown() {
+export default function Countdown({
+  setShowCamera,
+  setShowFront,
+  setShowCountdown,
+}) {
   const [showOne, setShowOne] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
   const [showThree, setShowThree] = useState(true);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       setShowThree(false);
       setShowTwo(true);
-      setInterval(() => {
+
+      setTimeout(() => {
         setShowTwo(false);
         setShowOne(true);
+        setTimeout(() => {
+          setShowFront(false);
+          setShowCamera(true);
+          setShowCountdown(false);
+        }, 1000);
       }, 2000);
     }, 1000);
     return () => clearTimeout(timer);
