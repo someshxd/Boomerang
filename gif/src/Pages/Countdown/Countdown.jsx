@@ -13,27 +13,30 @@ export default function Countdown({
   setShowFront,
   setShowCountdown,
 }) {
-  const [showOne, setShowOne] = useState(false);
-  const [showTwo, setShowTwo] = useState(false);
-  const [showThree, setShowThree] = useState(true);
+  const [count, setCount] = useState(3);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowThree(false);
-      setShowTwo(true);
-
-      setTimeout(() => {
-        setShowTwo(false);
-        setShowOne(true);
-        setTimeout(() => {
-          setShowFront(false);
-          setShowCamera(true);
-          setShowCountdown(false);
-        }, 1000);
-      }, 2000);
+    const countdownInterval = setInterval(() => {
+      if (count > 1) {
+        setCount(count - 1);
+      } else {
+        setShowFront(false);
+        setShowCamera(true);
+        setShowCountdown(false);
+        clearInterval(countdownInterval);
+      }
     }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+
+    return () => {
+      clearInterval(countdownInterval);
+    };
+  }, [count]);
+
+  const countImageMap = {
+    1: one,
+    2: two,
+    3: three,
+  };
 
   return (
     <div>
@@ -50,11 +53,7 @@ export default function Countdown({
         <div className="nkh">
           <img src={nkh} />
         </div>
-        <div className="count">
-          {showOne && <img src={one} />}
-          {showTwo && <img src={two} />}
-          {showThree && <img src={three} />}
-        </div>
+        <div className="count">{<img src={countImageMap[count]} />}</div>
       </div>
     </div>
   );

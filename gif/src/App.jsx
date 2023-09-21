@@ -3,6 +3,7 @@ import Front from "./Pages/Front/Front";
 import Countdown from "./Pages/Countdown/Countdown";
 import Camera from "./Pages/Camera/Camera";
 import Qrscan from "./Pages/Qrscan/Qrscan";
+import UploadWidget from "./UploadWidget";
 
 export default function App() {
   const [showFront, setShowFront] = useState(true);
@@ -30,6 +31,7 @@ export default function App() {
       )}
       {showcamera && <Camera />}
       {showQr && <Qrscan />}
+      <UploadWidget />
     </div>
   );
 }
