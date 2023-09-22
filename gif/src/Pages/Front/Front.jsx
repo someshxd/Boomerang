@@ -21,10 +21,10 @@ export default function Front({ setShowCountdown }) {
       <div className="heart">
         <img src={heart} onClick={showCount} />
       </div>
-      <div className="nkh">
+      <div className="nkh" onClick={showCount}>
         <img src={nkh} />
       </div>
-      <div className="smileto">
+      <div className="smileto" onClick={showCount}>
         <img src={smileto} />
       </div>
     </div>

@@ -5,8 +5,9 @@ import scanhere from "../../assets/scanhere.png";
 import qrarea from "../../assets/qrarea.png";
 import heart from "../../assets/heart.png";
 import nkh from "../../assets/nkh.png";
+import QRCode from "react-qr-code";
 
-export default function Qrscan() {
+export default function Qrscan({ showQr }) {
   return (
     <div>
       <div className="app">
@@ -23,7 +24,7 @@ export default function Qrscan() {
           <img src={nkh} />
         </div>
         <div className="qrarea">
-          <img src={qrarea} className="qr-img" />
+          <QRCode value={showQr} />
         </div>
       </div>
     </div>

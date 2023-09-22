@@ -1,7 +1,5 @@
-.camera {
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  width: 100%;
+.cameraframe {
+  overflow: hidden;
 }
 .frame {
   position: relative;
@@ -17,4 +15,9 @@
   position: absolute;
   top: 300px;
   left: 20%;
+}
+.camera {
+  position: absolute;
+  top: 18vh;
+  z-index: -1;
 }
