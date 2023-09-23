@@ -1,21 +1,15 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Camera.css";
-import gmlogo from "../../assets/gmlogo.png";
-import frame from "../../assets/frame.png";
-import bigg from "../../assets/bigg.png";
 import camframe from "../../assets/camframe.png";
 import Webcam from "react-webcam";
 import axios from "axios";
-import { CloudinaryVideo } from "@cloudinary/url-gen";
-import { source } from "@cloudinary/url-gen/actions/overlay";
-import { image } from "@cloudinary/url-gen/qualifiers/source";
+import loader from "../../assets/loader.gif";
 
 export default function Camera({ setShowQr, setShowCamera }) {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(true);
   const [recordedChunks, setRecordedChunks] = useState([]);
-  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleDataAvailable = ({ data }) => {
     if (data.size > 0) {
@@ -52,44 +46,28 @@ export default function Camera({ setShowQr, setShowCamera }) {
   }, [capturing]);
 
   const uploadVideo = async () => {
-    console.log("recordedChunks", recordedChunks);
-    const file = new Blob(recordedChunks, {
+    const blob = new Blob(recordedChunks, {
       type: "video/webm",
     });
-
-    console.log("file", file);
+    const file = new File([blob], `${Date.now()}-recordedfile`);
 
     const formData = new FormData();
 
-    formData.append("file", file);
-    formData.append("upload_preset", "q1gh8rnp");
+    formData.append("video", file);
 
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://api.cloudinary.com/v1_1/daxr7lj1c/video/upload",
+        url: "http://localhost:3000/processVideo",
         data: formData,
-        onUploadProgress: (event) => setUploadProgress(event.loaded),
       });
       const url = data.url.replace(
         "upload/",
         "upload/f_gif/e_boomerang/e_loop/"
       );
-      console.log("data", data);
 
-      const cloudinaryVideo = new CloudinaryVideo(
-        data.asset_id + "." + data.format
-      )
-        .setCloudConfig({
-          cloudName: "daxr7lj1c",
-        })
-        .overlay(source(image("overlay_img")));
-
-      console.log("cloudinaryVideo", cloudinaryVideo);
-      const finalUrl = cloudinaryVideo.toURL();
-      console.log("finalUrl", finalUrl);
       setShowCamera(false);
-      setShowQr(url);
+      setShowQr(data.url);
     } catch (error) {}
   };
 
@@ -108,12 +86,15 @@ export default function Camera({ setShowQr, setShowCamera }) {
               className="react-webcam"
               videoConstraints={{
                 facingMode: "user",
+                aspectRatio: 0.7496,
               }}
-              width={2600}
-              height={2500}
+              width={2048}
+              height={2732}
             />
           ) : (
-            <div>Uploading... {uploadProgress}</div>
+            <div style={{ marginLeft: "47vw", marginTop: "40vh" }}>
+              <img src={loader} alt="loader" width={150} />
+            </div>
           )}
         </div>
       </div>
