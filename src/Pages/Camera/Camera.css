@@ -1,5 +1,8 @@
 .cameraframe {
   overflow: hidden;
+  height: 1247px;
+  width: 1024px;
+  margin: auto;
 }
 .frame {
   position: relative;

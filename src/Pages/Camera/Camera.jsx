@@ -53,7 +53,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://boomerang-backend.onrender.com/processVideo",
+        url: "https://e286-117-215-254-70.ngrok-free.app/processVideo",
         data: formData,
       });
       const url = data.url.replace(
@@ -81,7 +81,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
               }}
               width={1024}
               height={1247}
-              onUserMedia={handleStartCaptureClick}
+              // onUserMedia={handleStartCaptureClick}
             />
           ) : (
             <div className="loader">
