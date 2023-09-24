@@ -18,10 +18,11 @@ export default function Camera({ setShowQr, setShowCamera }) {
   };
 
   const handleStartCaptureClick = () => {
-    setCapturing(true);
+    console.log('capturing')
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
-      mimeType: "video/webm",
+      mimeType: "video/webm;codecs=h264",
     });
+    console.log("capturing 2")
     mediaRecorderRef.current.addEventListener(
       "dataavailable",
       handleDataAvailable
@@ -68,7 +69,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
   return (
     <div>
       <div className="cameraframe">
-        <img src={camframe} alt="Camera Frame" width={1024} height={1366} />
+        <img src={camframe} alt="Camera Frame" width={1024} height={1247} />
         <div className="camera">
           {capturing ? (
             <Webcam
@@ -79,7 +80,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
                 aspectRatio: 0.7496,
               }}
               width={1024}
-              height={1366}
+              height={1247}
               onUserMedia={handleStartCaptureClick}
             />
           ) : (
