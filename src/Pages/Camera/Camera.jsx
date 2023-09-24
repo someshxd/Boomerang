@@ -36,12 +36,6 @@ export default function Camera({ setShowQr, setShowCamera }) {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      handleStartCaptureClick();
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
     if (!capturing) uploadVideo();
   }, [capturing]);
 
@@ -71,14 +65,10 @@ export default function Camera({ setShowQr, setShowCamera }) {
     } catch (error) {}
   };
 
-  // Camera.js
-
-  // Camera.js
-
   return (
     <div>
       <div className="cameraframe">
-        <img src={camframe} alt="Camera Frame" />
+        <img src={camframe} alt="Camera Frame" width={1024} height={1366} />
         <div className="camera">
           {capturing ? (
             <Webcam
@@ -88,12 +78,13 @@ export default function Camera({ setShowQr, setShowCamera }) {
                 facingMode: "user",
                 aspectRatio: 0.7496,
               }}
-              width={2048}
-              height={2732}
+              width={1024}
+              height={1366}
+              onUserMedia={handleStartCaptureClick}
             />
           ) : (
-            <div style={{ marginLeft: "47vw", marginTop: "40vh" }}>
-              <img src={loader} alt="loader" width={150} />
+            <div className="loader">
+              <img src={loader} alt="loader" width={80} style={{ marginLeft: 40 }} />
             </div>
           )}
         </div>

@@ -21,3 +21,9 @@
   top: 18vh;
   z-index: -1;
 }
+.loader {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 35vh;
+}
