@@ -81,7 +81,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
               }}
               width={1024}
               height={1247}
-              // onUserMedia={handleStartCaptureClick}
+              onUserMedia={handleStartCaptureClick}
             />
           ) : (
             <div className="loader">
