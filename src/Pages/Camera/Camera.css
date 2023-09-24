@@ -18,12 +18,12 @@
 }
 .camera {
   position: absolute;
-  top: 18vh;
+  top: 0;
   z-index: -1;
 }
 .loader {
   display: flex;
   width: 100vw;
   justify-content: center;
-  margin-top: 35vh;
+  margin-top: 50vh;
 }
