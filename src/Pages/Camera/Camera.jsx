@@ -5,6 +5,14 @@ import Webcam from "react-webcam";
 import axios from "axios";
 import loader from "../../assets/loader.gif";
 
+const getRecorderMimeType = () => {
+  if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+    return "video/mp4";
+  }
+
+  return "video/webm";
+}
+
 export default function Camera({ setShowQr, setShowCamera }) {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
@@ -18,11 +26,9 @@ export default function Camera({ setShowQr, setShowCamera }) {
   };
 
   const handleStartCaptureClick = () => {
-    console.log('capturing')
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
-      mimeType: "video/webm;codecs=h264",
+      mimeType: getRecorderMimeType(),
     });
-    console.log("capturing 2")
     mediaRecorderRef.current.addEventListener(
       "dataavailable",
       handleDataAvailable
@@ -37,13 +43,14 @@ export default function Camera({ setShowQr, setShowCamera }) {
   };
 
   useEffect(() => {
-    if (!capturing) uploadVideo();
-  }, [capturing]);
+    if (!capturing && recordedChunks.length) uploadVideo(recordedChunks);
+  }, [capturing, recordedChunks.length]);
 
-  const uploadVideo = async () => {
+  const uploadVideo = async (recordedChunks) => {
     const blob = new Blob(recordedChunks, {
-      type: "video/webm",
+      type: getRecorderMimeType(),
     });
+
     const file = new File([blob], `${Date.now()}-recordedfile`);
 
     const formData = new FormData();
@@ -53,7 +60,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://e286-117-215-254-70.ngrok-free.app/processVideo",
+        url: "https://boomerang-backend.onrender.com/processVideo",
         data: formData,
       });
       const url = data.url.replace(
