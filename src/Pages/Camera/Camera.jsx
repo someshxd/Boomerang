@@ -60,13 +60,9 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://boomerang-backend.onrender.com/processVideo",
+        url: "http://13.232.64.73:3000/processVideo",
         data: formData,
       });
-      const url = data.url.replace(
-        "upload/",
-        "upload/f_gif/e_boomerang/e_loop/"
-      );
 
       setShowCamera(false);
       setShowQr(data.url);
