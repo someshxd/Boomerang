@@ -60,7 +60,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "http://13.232.64.73:3000/processVideo",
+        url: "https://297e-3-7-237-64.ngrok-free.app/processVideo",
         data: formData,
       });
 
