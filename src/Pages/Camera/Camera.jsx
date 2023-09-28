@@ -60,7 +60,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://297e-3-7-237-64.ngrok-free.app/processVideo",
+        url: "https://magenta-rose-bream-boot.cyclic.cloud/processVideo",
         data: formData,
       });
 
