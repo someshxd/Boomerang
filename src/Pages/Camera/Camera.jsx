@@ -60,7 +60,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://magenta-rose-bream-boot.cyclic.cloud/processVideo",
+        url: "https://taupe-vulture-tam.cyclic.cloud/processVideo",
         data: formData,
       });
 
