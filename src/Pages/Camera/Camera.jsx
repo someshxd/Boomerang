@@ -60,7 +60,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "http://3.7.237.64:3000/processVideo",
+        url: "https://3.7.237.64.nip.io/processVideo",
         data: formData,
       });
 
