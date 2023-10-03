@@ -97,7 +97,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
             />
           ) : (
             <div className="loader">
-              {(uploadProgress > 0 && uploadProgress < 100) ? (
+              {(uploadProgress < 100) ? (
                 <>
                 <div style={{ fontSize: 60 }}>
                   {uploadProgress}%
@@ -105,7 +105,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
                 <div style={{ fontSize: 30 }}>Uploading</div>
               </>
               ) : (
-                <div style={{ fontSize: 30 }}>Processing Video...</div>
+                <div style={{ fontSize: 30 }}>Processing Video..</div>
               )}
             </div>
           )}

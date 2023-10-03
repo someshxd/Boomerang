@@ -67,7 +67,7 @@ export default function Front({
               height: showQr ? 160 : 250,
               marginBottom: showQr ? 90 : 0
             }}
-            alt="give-image"
+            alt={showQr ? "scan-here-image" : startCountdown ? "smile-image-front-image" : "give-123"}
           />
         </div>
       </div>
