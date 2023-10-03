@@ -18,6 +18,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(true);
   const [recordedChunks, setRecordedChunks] = useState([]);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleDataAvailable = ({ data }) => {
     if (data.size > 0) {
@@ -62,10 +63,18 @@ export default function Camera({ setShowQr, setShowCamera }) {
         method: "post",
         url: "https://3.7.237.64.nip.io/processVideo",
         data: formData,
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted);
+        },
       });
 
-      setShowCamera(false);
-      setShowQr(data.url);
+      setTimeout(() => {
+        setShowCamera(false);
+        setShowQr(data.url);
+      }, 1000);
     } catch (error) {}
   };
 
@@ -88,7 +97,16 @@ export default function Camera({ setShowQr, setShowCamera }) {
             />
           ) : (
             <div className="loader">
-              <img src={loader} alt="loader" width={80} style={{ marginLeft: 40 }} />
+              {(uploadProgress > 0 && uploadProgress < 100) ? (
+                <>
+                <div style={{ fontSize: 60 }}>
+                  {uploadProgress}%
+                </div>
+                <div style={{ fontSize: 30 }}>Uploading</div>
+              </>
+              ) : (
+                <div style={{ fontSize: 30 }}>Processing Video...</div>
+              )}
             </div>
           )}
         </div>

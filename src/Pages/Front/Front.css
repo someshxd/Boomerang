@@ -15,10 +15,6 @@
   margin-top: 16vh;
 }
 
-.give img {
-  /* height: 250px; */
-}
-
 .front-center {
   display: flex;
   justify-content: center;
@@ -59,4 +55,9 @@
 .qrarea svg {
   width: 300px !important;
   height: 300px !important;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 15px solid white;
+  background: white;
+  border-bottom: 12px solid white;
 }
