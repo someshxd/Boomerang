@@ -58,7 +58,7 @@ export default function Front({
     <div className="front">
       <div className="front-top">
         <div className="gmlogo" onClick={goHome}>
-          <img src={gmlogo} />
+          <img src={gmlogo} alt="gmlogo-image" />
         </div>
         <div className="give">
           <img 
@@ -67,23 +67,24 @@ export default function Front({
               height: showQr ? 160 : 250,
               marginBottom: showQr ? 90 : 0
             }}
+            alt="give-image"
           />
         </div>
       </div>
       <div className="front-center">
-        <img src={heart} className="heart-img" onClick={handleStartCountdown} />
+        <img src={heart} className="heart-img" onClick={handleStartCountdown} alt="heart-image" />
         {!startCountdown ? (
           showQr ? (
             <div className="qrarea">
               <QRCode value={showQr} />
             </div>
           ) : (
-            <img src={smileto} className="smile-to" onClick={handleStartCountdown} />
+            <img src={smileto} className="smile-to" onClick={handleStartCountdown} alt="smile-to-image" />
           )
         ) : (
-          <img src={countImageMap[count]} className="count-img" />
+          <img src={countImageMap[count]} className="count-img" alt="counter-image" />
         )}
-        <img src={nkh} className="nkh-front" onClick={handleStartCountdown} />
+        <img src={nkh} className="nkh-front" onClick={handleStartCountdown} alt="nkh-image" />
       </div>
     </div>
   );
