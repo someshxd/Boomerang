@@ -58,7 +58,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "http://localhost:3000/processVideo",
+        url: "https://44.219.93.142/processVideo",
         data: formData,
       });
       const url = data.url.replace(
