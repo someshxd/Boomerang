@@ -6,13 +6,13 @@
 }
 
 .gmlogo img {
-  width: 380px;
+  width: 320px;
 }
 
 .give {
   display: flex;
   justify-content: center;
-  margin-top: 16vh;
+  margin-top: 150px;
 }
 
 .front-center {

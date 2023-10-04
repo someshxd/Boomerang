@@ -66,7 +66,8 @@ export default function Front({
             src={showQr ? scanhere : startCountdown ? smile : give}
             style={{
               height: showQr ? 160 : 250,
-              marginBottom: showQr ? 90 : 0
+              marginBottom: showQr ? 20 : 0,
+              marginTop: showQr ? 60 : 150
             }}
             alt={showQr ? "scan-here-image" : startCountdown ? "smile-image-front-image" : "give-123"}
           />
@@ -86,7 +87,7 @@ export default function Front({
           <img src={countImageMap[count]} className="count-img" alt="counter-image" />
         )}
         <img src={nkh} className="nkh-front" onClick={handleStartCountdown} alt="nkh-image" />
-        <img src={restart} alt="restart-image" className="restart-img" onClick={goHome} />
+        {showQr && <img src={restart} alt="restart-image" className="restart-img" onClick={goHome} />}
       </div>
     </div>
   );
