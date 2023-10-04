@@ -35,7 +35,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
       handleDataAvailable
     );
     mediaRecorderRef.current.start();
-    setTimeout(handleStopCaptureClick, 3000);
+    setTimeout(handleStopCaptureClick, 5000);
   };
 
   const handleStopCaptureClick = () => {
@@ -74,7 +74,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
       setTimeout(() => {
         setShowCamera(false);
         setShowQr(data.url);
-      }, 1000);
+      }, 2000);
     } catch (error) {}
   };
 
@@ -93,7 +93,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
               }}
               width={1024}
               height={1247}
-              onUserMedia={handleStartCaptureClick}
+              onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
             />
           ) : (
             <div className="loader">

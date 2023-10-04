@@ -66,7 +66,7 @@ export default function App() {
     <div className="app">
       {loading ? (
         <div className="overlayContainer">
-          <span class="overlayLoader"></span>
+          <span className="overlayLoader"></span>
         </div>
       ) : (
         <>
