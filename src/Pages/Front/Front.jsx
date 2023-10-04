@@ -44,7 +44,7 @@ export default function Front({
 
   useEffect(() => {
     if (showQr) {
-      setTimeout(goHome, 5000);
+      // setTimeout(goHome, 5000);
     }
   }, [showQr])
 
