@@ -61,3 +61,11 @@
   background: white;
   border-bottom: 12px solid white;
 }
+
+.restart-img {
+  position: absolute;
+  width: 220px;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}

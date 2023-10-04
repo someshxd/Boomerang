@@ -9,6 +9,7 @@ import one from "../../assets/1.png";
 import two from "../../assets/2.png";
 import three from "../../assets/3.png";
 import scanhere from "../../assets/scanhere.png";
+import restart from "../../assets/restart.png";
 import QRCode from "react-qr-code";
 import "./Front.css"; // Import the CSS file
 
@@ -85,6 +86,7 @@ export default function Front({
           <img src={countImageMap[count]} className="count-img" alt="counter-image" />
         )}
         <img src={nkh} className="nkh-front" onClick={handleStartCountdown} alt="nkh-image" />
+        <img src={restart} alt="restart-image" className="restart-img" onClick={goHome} />
       </div>
     </div>
   );

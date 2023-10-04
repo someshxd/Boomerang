@@ -13,6 +13,7 @@ import two from "./assets/2.png";
 import three from "./assets/3.png";
 import scanhere from "./assets/scanhere.png";
 import camframe from "./assets/camframe.png";
+import restart from "./assets/restart.png";
 
 const imageSources = [
   gmlogo,
@@ -26,6 +27,7 @@ const imageSources = [
   three,
   scanhere,
   camframe,
+  restart
 ]
 
 export default function App() {
