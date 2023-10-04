@@ -61,7 +61,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
     try {
       const { data } = await axios({
         method: "post",
-        url: "https://44.219.93.142processVideo",
+        url: "https://44.219.93.142.nip.io/processVideo",
         data: formData,
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round(
