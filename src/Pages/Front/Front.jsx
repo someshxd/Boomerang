@@ -67,7 +67,7 @@ export default function Front({
             style={{
               height: showQr ? 160 : 250,
               marginBottom: showQr ? 20 : 0,
-              marginTop: showQr ? 60 : 150
+              marginTop: showQr ? 200 : 150
             }}
             alt={showQr ? "scan-here-image" : startCountdown ? "smile-image-front-image" : "give-123"}
           />
