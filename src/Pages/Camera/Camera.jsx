@@ -74,7 +74,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
       setTimeout(() => {
         setShowCamera(false);
         setShowQr(data.url);
-      }, 2000);
+      }, 4000);
     } catch (error) {}
   };
 
