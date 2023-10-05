@@ -81,7 +81,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
   return (
     <div>
       <div className="cameraframe">
-        <img src={camframe} alt="Camera Frame" width={window.innerWidth} height={window.innerHeight} />
+        <img src={camframe} alt="Camera Frame" width={1024} height={window.innerHeight} />
         <div className="camera">
           {capturing ? (
             <Webcam
@@ -89,10 +89,10 @@ export default function Camera({ setShowQr, setShowCamera }) {
               className="react-webcam"
               videoConstraints={{
                 facingMode: "user",
-                aspectRatio: 1,
+                aspectRatio: 1
               }}
-              width={window.innerWidth}
-              onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
+              width={1024}
+              // onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
             />
           ) : (
             <div className="loader">

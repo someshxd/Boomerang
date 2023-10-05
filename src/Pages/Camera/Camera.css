@@ -2,6 +2,8 @@
   overflow: hidden;
   margin: auto;
   position: relative;
+  height: 100vh;
+  width: 1024px;
 }
 .frame {
   position: relative;
@@ -36,5 +38,5 @@
 
 .react-webcam {
   position: absolute;
-  top: 350px;
+  top: 340px;
 }
