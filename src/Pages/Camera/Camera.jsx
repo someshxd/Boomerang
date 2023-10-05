@@ -92,7 +92,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
                 aspectRatio: 1
               }}
               width={1024}
-              // onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
+              onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
             />
           ) : (
             <div className="loader">
