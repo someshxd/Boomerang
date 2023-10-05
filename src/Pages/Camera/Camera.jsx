@@ -71,10 +71,8 @@ export default function Camera({ setShowQr, setShowCamera }) {
         },
       });
 
-      setTimeout(() => {
-        setShowCamera(false);
-        setShowQr(data.url);
-      }, 4000);
+      setShowCamera(false);
+      setShowQr(data.url);
     } catch (error) {}
   };
 
@@ -92,7 +90,7 @@ export default function Camera({ setShowQr, setShowCamera }) {
                 aspectRatio: 1
               }}
               width={1024}
-              onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
+              onUserMedia={() => setTimeout(handleStartCaptureClick, 500)}
             />
           ) : (
             <div className="loader">
