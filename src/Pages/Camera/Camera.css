@@ -1,8 +1,7 @@
 .cameraframe {
   overflow: hidden;
-  height: 1292px;
-  width: 1024px;
   margin: auto;
+  position: relative;
 }
 .frame {
   position: relative;
@@ -33,4 +32,9 @@
   margin-top: 50vh;
   font-family: 'Courier New', Courier, monospace;
   margin-left: 30px;
+}
+
+.react-webcam {
+  position: absolute;
+  top: 350px;
 }
