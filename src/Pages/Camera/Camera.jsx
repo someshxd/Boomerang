@@ -89,11 +89,11 @@ export default function Camera({ setShowQr, setShowCamera }) {
               className="react-webcam"
               videoConstraints={{
                 facingMode: "user",
-                aspectRatio: 0.79,
+                aspectRatio: 0.79256965944,
               }}
               width={1024}
               height={1292}
-              onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
+              // onUserMedia={() => setTimeout(handleStartCaptureClick, 1000)}
             />
           ) : (
             <div className="loader">
